@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 25th Birthday, My Queen! 👑</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --minion-yellow: #FFDE59;
+            --minion-blue: #6794FE;
+            --minion-grey: #333333;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: 'Comic Neue', cursive;
+            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Side Images */
+        .side-decoration {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 150px;
+            z-index: 1;
+            animation: float 4s ease-in-out infinite;
+            border: 5px solid white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 25vw;
+        }
+
+        .left-side {
+            left: 20px;
+        }
+
+        .right-side {
+            right: 20px;
+        }
+
+        /* Main Image */
+        .main-image {
+            max-width: 400px;
+            margin: 20px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            animation: float 4s ease-in-out infinite;
+            border: 5px solid white;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .header {
+            background: rgba(255,255,255,0.9);
+            padding: 20px;
+            border-radius: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: var(--primary);
+            text-shadow: 2px 2px 0 white;
+            animation: romanticText 6s infinite;
+        }
+
+        @keyframes romanticText {
+            0%, 100% { content: "🎂 Happy 25th Birthday, My Queen! 👑"; }
+            25% { content: "🎂 Happy 25th Birthday, My Life! 💖"; }
+            50% { content: "🎂 Happy 25th Birthday, My World! 🌍"; }
+            75% { content: "🎂 Happy 25th Birthday, Mera Sab Kuch! ❤️"; }
+        }
+
+        .age-warrior {
+            position: relative;
+            height: 300px;
+            margin: 40px 0;
+        }
+
+        .warrior {
+            position: absolute;
+            left: 50%;
+            bottom: 50px;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: bounce 2s infinite;
+        }
+
+        .warrior-body {
+            width: 80px;
+            height: 120px;
+            background: #fff;
+            border-radius: 40px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .warrior-head {
+            width: 60px;
+            height: 60px;
+            background: #ffe6cc;
+            border-radius: 50%;
+            position: absolute;
+            top: -30px;
+            left: 10px;
+            border: 3px solid #ff9966;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .warrior-head::before {
+            content: '😎';
+            font-size: 30px;
+        }
+
+        .age-crown {
+            position: absolute;
+            top: -40px;
+            left: -10px;
+            font-size: 24px;
+            background: var(--accent);
+            padding: 5px 15px;
+            border-radius: 15px;
+            transform: rotate(-15deg);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .kicking-leg {
+            position: absolute;
+            right: -30px;
+            bottom: 20px;
+            width: 60px;
+            height: 20px;
+            background: #fff;
+            border-radius: 10px;
+            transform-origin: left center;
+            animation: kick 0.5s infinite alternate;
+        }
+
+        .number-24 {
+            position: absolute;
+            right: 20%;
+            bottom: 80px;
+            font-size: 40px;
+            font-weight: bold;
+            color: var(--primary);
+            animation: floatAway 2s infinite alternate;
+            text-shadow: 2px 2px 0 white;
+        }
+
+        .minion-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .minion {
+            width: 100px;
+            height: 150px;
+            background: var(--minion-yellow);
+            border-radius: 50px 50px 25px 25px;
+            position: relative;
+            animation: bounce 2s infinite;
+        }
+
+        .minion::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 40%;
+            background: var(--minion-blue);
+            bottom: 0;
+            border-radius: 0 0 25px 25px;
+        }
+
+        .minion::after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 10%;
+            background: var(--minion-blue);
+            bottom: 35%;
+            left: 10%;
+            border-radius: 10px;
+        }
+
+        .minion .goggles {
+            position: absolute;
+            width: 80px;
+            height: 40px;
+            background: var(--minion-grey);
+            border-radius: 20px;
+            top: 20px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .minion .goggles::before {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 30px;
+            background: #c0c0c0;
+            border-radius: 15px;
+        }
+
+        .minion .goggles::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--minion-grey);
+            border-radius: 50%;
+            top: 5px;
+            left: 5px;
+        }
+
+        .minion .eyes {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            top: 30px;
+            left: 20px;
+        }
+
+        .minion .eyes::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: black;
+            border-radius: 50%;
+            top: 5px;
+            left: 5px;
+        }
+
+        .minion .eyes.right {
+            left: 60px;
+        }
+
+        .minion .mouth {
+            position: absolute;
+            width: 40px;
+            height: 20px;
+            background: transparent;
+            border: 3px solid var(--minion-grey);
+            border-radius: 0 0 40px 40px;
+            top: 70px;
+            left: 30px;
+        }
+
+        .hearts {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            animation: float 6s linear infinite;
+            opacity: 0;
+        }
+
+        .question-box {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 20px auto;
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-group {
+            position: relative;
+            margin: 30px 0;
+            min-height: 60px;
+        }
+
+        #yesBtn {
+            background: var(--secondary);
+            padding: 15px 40px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            color: white;
+            transition: transform 0.3s;
+        }
+
+        #noBtn {
+            position: absolute;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.1s;
+            left: 0;
+            top: 0;
+        }
+
+        .surprise {
+            display: none;
+            font-size: 1.5em;
+            color: var(--primary);
+            padding: 30px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .surprise p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .surprise .lyrics {
+            font-style: italic;
+            color: var(--primary);
+            margin-top: 20px;
+        }
+
+        .cute-element {
+            position: absolute;
+            pointer-events: none;
+            animation: float 6s linear infinite;
+        }
+
+        .cute-element.flower {
+            font-size: 30px;
+            color: #FF6B6B;
+        }
+
+        .cute-element.cake {
+            font-size: 40px;
+            color: #FFE66D;
+        }
+
+        .cute-element.balloon {
+            font-size: 50px;
+            color: #4ECDC4;
+        }
+
+        .footer {
+            position: relative;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            font-family: 'Comic Neue', cursive;
+            margin-top: 50px;
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+            color: var(--primary);
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes kick {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-45deg); }
+        }
+
+        @keyframes floatAway {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px) translateX(50px); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @media (max-width: 768px) {
+            .side-decoration {
+                width: 100px;
+                max-width: 30vw;
+                left: 10px !important;
+                right: 10px !important;
+            }
+            .main-image {
+                max-width: 90%;
+            }
+            .header h1 {
+                font-size: 1.8em;
+            }
+            .warrior {
+                transform: scale(0.7) translateX(-50%);
+            }
+            .number-24 {
+                font-size: 30px;
+                right: 10%;
+            }
+            .minion {
+                width: 80px;
+                height: 120px;
+            }
+            .signature {
+                font-size: 1.2em;
+            }
+            .btn-group {
+                min-height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Music Player -->
+    <audio id="birthdaySong" autoplay loop controls style="display: none;">
+        <source src="https://www.dropbox.com/scl/fi/842yue452rrqqefeum9p0/Ishq-Hai-PagalWorld.mp3?rlkey=mnht8ztv4tvvbh79ctbj384gj&st=79wb3wq5&dl=1" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Side Images -->
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW-Nz8J1_HPtalJna4iGVI8N2Wxjr5B26QbA&s" 
+         alt="Side Decoration" 
+         class="side-decoration left-side">
+         
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW-Nz8J1_HPtalJna4iGVI8N2Wxjr5B26QbA&s" 
+         alt="Side Decoration" 
+         class="side-decoration right-side">
+
+    <div class="container">
+        <!-- Main Image -->
+        <div class="main-image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl04mcWnVpK7AAZShS0dUduOmFUXEHDfUu2A&s" 
+                 alt="Our Special Memory">
+        </div>
+
+        <div class="header">
+            <h1 id="romanticTitle">🎂 Happy 25th Birthday, My Queen! 👑</h1>
+            <div class="age-warrior">
+                <div class="warrior">
+                    <div class="warrior-body">
+                        <div class="warrior-head">
+                            <div class="age-crown">25</div>
+                        </div>
+                        <div class="kicking-leg"></div>
+                    </div>
+                </div>
+                <div class="number-24">24</div>
+            </div>
+        </div>
+
+        <div class="minion-container">
+            <div class="minion">
+                <div class="goggles"></div>
+                <div class="eyes"></div>
+                <div class="eyes right"></div>
+                <div class="mouth"></div>
+            </div>
+            <div class="minion">
+                <div class="goggles"></div>
+                <div class="eyes"></div>
+                <div class="eyes right"></div>
+                <div class="mouth"></div>
+            </div>
+            <div class="minion">
+                <div class="goggles"></div>
+                <div class="eyes"></div>
+                <div class="eyes right"></div>
+                <div class="mouth"></div>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <h2>Do you love me more than anything in this world? 💖</h2>
+            <div class="btn-group">
+                <button id="yesBtn" onclick="showSurprise()">YES! 😍</button>
+                <button id="noBtn" onmouseover="escapeButton()" ontouchstart="escapeButton()">No 🙈</button>
+            </div>
+        </div>
+
+        <div class="surprise" id="surprise">
+            <h2>🎉 You're My Forever Love! 💝</h2>
+            <p>
+                Happy 25th Birthday to the most amazing person in my life! 🎂<br>
+                Aap mere liye sab kuch ho, meri khushiyon ka silsila ho, meri har saans ka maqsad ho, aur meri zindagi ka har ek khwab ho. ❤️
+                Aapke bina yeh duniya adhoori hai, aur aapke saath har pal ek nayi kahani hai. <br>
+                Aapki muskurahat meri duniya ko roshan karti hai, aur aapki baaton mein meri zindagi ka sukoon chhupa hai. ❤️<br>
+                Iss saal thoda kam gussaa kriyega, okay? 😅<br>
+                Aur yeh suno, ek chhoti si request hai:<br>
+                <span class="lyrics">"Saaya Mera Hee Tu Aur Main Tera
+				Tu Dikhe Ya Na Dikhe Tu..
+				Teri Khushboo Koo-Ba-Koo
+				Ishq Hai Yeh Ishq Hai..." 🎶</span><br>
+                You are the missing piece I never knew I needed, the melody that turns my world into a symphony. Without you, life would be nothing but an endless silence. My love for you reaches beyond the stars, beyond every galaxy, and yet still, it feels like I’ll never truly touch the depths of how much you mean to me. You are my heartbeat, my reason, my everything. My forever, my always... you're the light that guides me through the darkest days and the warmth that melts away every doubt. You’re the best thing that’s ever happened to me, the cutest soul to ever exist, and the love that I’ll never stop chasing.<br>
+
+				You, my love, are my home...where my heart will always find peace. In a world of fleeting moments, you are my eternity, my one and only. You’ll forever be mine, now and always, because there's no one else like you, and I wouldn’t want anyone else. With you, I’ve found the impossible.... a love that makes everything else pale in comparison. You're not just my dream come true... you are the dream I never want to wake from. I Loveeee Youuuu Sbseee zyaaddaaaa jaaann merii ...<br>❤️✨ 🌙💖
+				Muaaahhhhhhhhh
+            </p>
+            <div class="hearts" id="hearts"></div>
+        </div>
+    </div>
+
+    <!-- Cute Elements -->
+    <div class="cute-element flower" style="left: 10%; top: 10%;">🌸</div>
+    <div class="cute-element cake" style="left: 20%; top: 30%;">🎂</div>
+    <div class="cute-element balloon" style="left: 30%; top: 50%;">🎈</div>
+    <div class="cute-element flower" style="left: 40%; top: 70%;">🌼</div>
+    <div class="cute-element cake" style="left: 50%; top: 20%;">🍰</div>
+    <div class="cute-element balloon" style="left: 60%; top: 40%;">🎈</div>
+    <div class="cute-element flower" style="left: 70%; top: 60%;">🌺</div>
+    <div class="cute-element cake" style="left: 80%; top: 10%;">🧁</div>
+    <div class="cute-element balloon" style="left: 90%; top: 30%;">🎈</div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div>Crafted with love</div>
+        <div class="signature">by boki gadha aapka pyaara Krishna</div>
+    </div>
+
+    <script>
+        const romanticPhrases = [
+            "🎂 Happy 25th Birthday, My Queen! 👑",
+            "🎂 Happy 25th Birthday, My Life! 💖",
+            "🎂 Happy 25th Birthday, My World! 🌍",
+            "🎂 Happy 25th Birthday, Mera Sab Kuch! ❤️"
+        ];
+        let currentPhraseIndex = 0;
+        const romanticTitle = document.getElementById('romanticTitle');
+
+        setInterval(() => {
+            currentPhraseIndex = (currentPhraseIndex + 1) % romanticPhrases.length;
+            romanticTitle.textContent = romanticPhrases[currentPhraseIndex];
+        }, 3000);
+
+        function escapeButton() {
+            const noBtn = document.getElementById('noBtn');
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+            noBtn.style.transform = `rotate(${Math.random() * 360}deg)`;
+        }
+
+        function showSurprise() {
+            document.querySelector('.question-box').style.display = 'none';
+            document.getElementById('surprise').style.display = 'block';
+            
+            for(let i = 0; i < 50; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDelay = Math.random() * 2 + 's';
+                document.getElementById('hearts').appendChild(heart);
+            }
+
+            document.querySelectorAll('.minion').forEach(minion => {
+                minion.style.animation = 'bounce 0.5s infinite';
+            });
+        }
+
+        for(let i = 0; i < 20; i++) {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = Math.random() > 0.5 ? '💛' : '💖';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(heart);
+        }
+
+        setInterval(() => {
+            createConfettiBurst();
+        }, 2000);
+
+        function createConfettiBurst() {
+            for(let i = 0; i < 10; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti-burst';
+                confetti.style.left = Math.random() * 80 + 10 + '%';
+                confetti.style.top = '60%';
+                confetti.style.backgroundColor = `hsl(${Math.random()*360}, 70%, 60%)`;
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => {
+                    confetti.remove();
+                }, 1000);
+            }
+        }
+
+        // Start the song from 55 seconds
+        const audio = document.getElementById('birthdaySong');
+        audio.currentTime = 55;
+        audio.play();
+    </script>
+</body>
+</html>
